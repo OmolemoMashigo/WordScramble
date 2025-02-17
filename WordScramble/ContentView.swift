@@ -8,27 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let boys = ["Thabo", "Rey", "Matt"]
+    
     var body: some View {
-        List{
-            Section("Section 1"){
-                Text("Static Row 1")
-                Text("Static Row 2")
-                Text("Static Row 3")
-            }
-            
-            Section("Section 2"){
-                ForEach(0..<5){
-                    Text("Dynamic row \($0)" )
-                }
-            }
-            
-            Section("Section 3"){
-                Text("Static Row 4")
-                Text("Static Row 5")
-                Text("Static Row 6")
-            }
+        //if list is only made up of dynamic content
+        List(boys, id: \.self){
+            Text($0)
         }
-        .listStyle(.grouped)
+        
     }
 }
 
